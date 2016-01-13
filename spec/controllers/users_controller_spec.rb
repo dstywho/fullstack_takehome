@@ -16,5 +16,10 @@ describe UsersController do
       expect(response.status).to eq(200)
       expect(response).to render_template('show')
     end
+
+    it 'assigns @user' do
+      get :show, id: user.id
+      expect(assigns[:user]).to eq(user)
+    end
   end
 end
