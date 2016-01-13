@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'users', to: 'users#index'
-  get 'users/:id', to: 'users#show'
+  get 'users/:id', to: 'users#show', as: 'user'
 
   get 'videos', to: 'videos#index'
   get 'videos/:id', to: 'videos#show', as: 'video'

@@ -8,10 +8,11 @@ describe VideosController do
       expect(response).to render_template('index')
     end
 
-    let(:videos) { FactoryGirl.create_list(:video, 2) }
+    let!(:videos) { FactoryGirl.create_list(:video, 2) }
     it 'assigns @videos' do
       get :index
-      expect(assigns[:videos]).to eq(videos)
+      expect(assigns[:videos]).to match_array(videos)
+      expect(assigns[:videos].count).to eq(2)
     end
   end
 
