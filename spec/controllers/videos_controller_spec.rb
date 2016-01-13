@@ -7,6 +7,12 @@ describe VideosController do
       expect(response.status).to eq(200)
       expect(response).to render_template('index')
     end
+
+    let(:videos) { FactoryGirl.create_list(:video, 2) }
+    it 'assigns @videos' do
+      get :index
+      expect(assigns[:videos]).to eq(videos)
+    end
   end
 
   describe 'get show' do
@@ -15,6 +21,11 @@ describe VideosController do
       get :show, id: video.id
       expect(response.status).to eq(200)
       expect(response).to render_template('show')
+    end
+
+    it 'assigns @video' do
+      get :show, id: video.id
+      expect(assigns[:video]).to eq(video)
     end
   end
 end
