@@ -1,7 +1,5 @@
 <h1>videos</h1>
 
-<ul>
-<% @videos.each do |video| %>
-  <li><%= link_to video.title, video_path(video), id: dom_id(video) %></li>
-<% end %>
-</ul>
+<div>
+  <%= render @videos %>
+</div>
