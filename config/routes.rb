@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show'
 
   get 'videos', to: 'videos#index'
-  get 'videos/:id', to: 'videos#show'
+  get 'videos/:id', to: 'videos#show', as: 'video'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
