@@ -5,4 +5,8 @@ describe User do
   it 'should respond to videos' do
     expect(user).to respond_to(:videos)
   end
+
+  it 'should be associated with videos' do
+    expect(user.videos.build).to be_valid
+  end
 end
