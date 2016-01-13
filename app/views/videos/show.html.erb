@@ -1,3 +1,9 @@
 <h1><%= @video.title %></h1>
 
 <%= link_to 'all videos', videos_path %>
+
+<% @video.attributes.each do |key, value| %>
+  <p><strong><%= key %></strong> <%= value %></p>
+<% end %>
+
+<p><strong>users</strong> <%= render @video.users %></p>
