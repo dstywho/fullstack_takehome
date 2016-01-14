@@ -4,4 +4,7 @@
   <p><strong><%= key %></strong> <%= value %></p>
 <% end %>
 
-<p><strong>videos</strong> <%= render @user.videos %></p>
+<strong>associated videos</strong>
+<ul>
+  <%= render @user.videos %>
+</ul>
