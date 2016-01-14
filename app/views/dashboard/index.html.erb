@@ -2,3 +2,14 @@
   <li><%= link_to 'all videos', videos_path %></li>
   <li><%= link_to 'all users', users_path %></li>
 </ul>
+
+<table>
+  <thead>
+    <tr><td>video</td><td>users</td></tr>
+  </thead>
+  <tbody>
+    <% @histogram.each do |title, users| %>
+      <tr><td><%= title %></td><td><%= users %></td></tr>
+    <% end %>
+  </tbody>
+</table>
