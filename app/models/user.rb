@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   #    User.last.videos
   has_many :videos, through: :users_videos
   has_many :users_videos
+
+  default_scope -> { order('name') }
+  paginates_per 10
 end
