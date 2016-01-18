@@ -7,6 +7,13 @@ describe UsersController do
       expect(response.status).to eq(200)
       expect(response).to render_template('index')
     end
+
+    let!(:users) { FactoryGirl.create_list(:user, 12) }
+    it 'assigns @users by paginates_per 10' do
+      get :index, page: 2
+      expect(assigns[:users]).to match_array(User.last(2))
+      expect(assigns[:users].count).to eq(2)
+    end
   end
 
   describe 'get show' do
